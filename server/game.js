@@ -22,7 +22,7 @@ function rollDice({ player }) {
     const result = first + second;
 
     if (result === 7) {
-        // TODO: thief
+        // TODO: robber
     } else {
         const relevantTiles = gameState.tiles.filter(tile => tile.number === result);
         
@@ -90,7 +90,7 @@ function generateBoardState() {
     let tileNumsClone = TILE_NUMS.slice();
 
     let tiles = [];
-    let thiefTile = null;
+    let robberTile = null;
 
     while (tileTypesClone.length > 0) {
         const tileTypeIndex = Math.floor(Math.random() * tileTypesClone.length);
@@ -103,14 +103,14 @@ function generateBoardState() {
             number = tileNumsClone.splice(tileNumIndex, 1)[0];
         } else {
             number = null;
-            thiefTile = tiles.length;
+            robberTile = tiles.length;
         }
 
         tiles.push({ type, number });
     }
 
     return {
-        thiefTile,
+        robberTile,
         tiles,
         roadSlots: new Array(NUM_ROAD_SLOTS).fill(null),
         settlementSlots: new Array(NUM_SETTLEMENT_SLOTS).fill(null),

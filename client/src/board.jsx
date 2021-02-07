@@ -8,8 +8,11 @@ export default class Board extends React.Component {
         return (
             <div class="board">
                 {this.props.tiles?.map((tile, index) => 
-                    <Tile {...tile} index={index} key={index} />)}
-                
+                    <Tile 
+                        {...tile} 
+                        index={index} 
+                        hasRobber={this.props.robberTile === index} 
+                        key={index} />)}
             </div>
         )
     }

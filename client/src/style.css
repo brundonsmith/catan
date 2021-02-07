@@ -66,3 +66,12 @@ body {
 
     box-shadow: -1px -1px 1px rgba(0, 0, 0, 0.2) inset;
 }
+
+.tile .robber {
+    display: inline-block;
+    background-image: url("robber.png");
+    background-position: center;
+    background-size: 100%;
+    height: calc(var(--tile-height) * 1.5/5);
+    width: calc(var(--tile-height) * 1.5/5);
+}

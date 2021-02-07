@@ -5,13 +5,20 @@ export default class Tile extends React.Component {
     render() {
         return (
             <div className={`tile ${this.props.type}`} style={{ "--row": getRow(this.props.index), "--col": getCol(this.props.index) }}>
-                {this.props.number != null ?
+                {this.props.number != null && !this.props.hasRobber ?
                     <Number number={this.props.number} />
+                : null}
+
+                {this.props.hasRobber ?
+                    <Robber />
                 : null}
             </div>
         )
     }
 }
+
+const Number = ({ number }) => <div class="number">{number}</div>
+const Robber = ({ }) => <div class="robber"></div>
 
 function getRow(index) {
     if (index < 3) {
@@ -48,5 +55,3 @@ function getCol(index) {
         return 4;
     }
 }
-
-const Number = ({ number }) => <div class="number">{number}</div>
