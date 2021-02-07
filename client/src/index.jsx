@@ -3,11 +3,14 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import Board from "./board";
+import OtherPlayers from "./other-players";
+import CurrentPlayer from "./current-player";
 
 class App extends React.Component {
 
     state = {
-        gameState: null
+        gameState: null,
+        player: "Brandon",
     };
 
     componentDidMount() {
@@ -25,23 +28,16 @@ class App extends React.Component {
             <div>
                 <Board {...this.state.gameState}></Board>
 
-                <button onClick={() => call(`addPlayer`, { color: "red", name: "brandon" })}>
-                    Add player
-                </button>
+                <OtherPlayers gameState={this.state.gameState} player={this.state.player} />
+
+                <CurrentPlayer gameState={this.state.gameState} player={this.state.player} />
+
                 <pre>
                     {JSON.stringify(this.state.gameState, null, 2)}
                 </pre>
             </div>
         )
     }
-}
-
-function call(func, params) {
-    const queryString = Object.entries(params).map(([key, value]) => {
-        return `${key}=${JSON.stringify(value)}`;
-    }).join('&');
-
-    return fetch(`/api/${func}?${queryString}`, { method: "POST" })
 }
 
 window.addEventListener("load", () => {

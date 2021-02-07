@@ -81,7 +81,31 @@ function subtractResources(player, resources) {
 function generateGameState() {
     return {
         ...generateBoardState(),
-        players: [],
+        players: [
+            // TODO: Remove in the real game
+            {
+                color: "red",
+                name: "Brandon",
+                resources: {
+                    "wood": 2,
+                    "clay": 3,
+                    "stone": 1,
+                    "wheat": 0,
+                    "sheep": 1,
+                }
+            },
+            {
+                color: "blue",
+                name: "Sarah",
+                resources: {
+                    "wood": 2,
+                    "clay": 3,
+                    "stone": 1,
+                    "wheat": 0,
+                    "sheep": 1,
+                }
+            }
+        ],
     }
 }
 

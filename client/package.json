@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack ; cp ./src/index.html ./dist",
-    "watch": "webpack --watch"
+    "build": "webpack ; node ./copy-statics.js",
+    "watch": "webpack --watch",
+    "copy-statics": "node ./copy-statics.js"
   },
   "author": "",
   "license": "ISC",

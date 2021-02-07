@@ -57,14 +57,39 @@ body {
     display:flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     background: #ffe4c4;
 
-    font-size: calc(var(--tile-height) * 1/5);
+    font-size: calc(var(--tile-height) * 0.8/5);
+    line-height: calc(var(--tile-height) * 0.8/5);
     height: calc(var(--tile-height) * 1.5/5);
     width: calc(var(--tile-height) * 1.5/5);
     border-radius:50%;
 
     box-shadow: -1px -1px 1px rgba(0, 0, 0, 0.2) inset;
+}
+
+.tile .number.red {
+    color: crimson;
+}
+.tile .number.red .dots .dot {
+    background: crimson;
+}
+
+.tile .number .dots {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tile .number .dots .dot {
+    background: black;
+    border-radius: 50%;
+    width: calc(var(--tile-width) / 30);
+    height: calc(var(--tile-width) / 30);
+}
+.tile .number .dots .dot:not(:first-of-type) {
+    margin-left: calc(var(--tile-width) / 70)
 }
 
 .tile .robber {

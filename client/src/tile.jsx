@@ -17,8 +17,18 @@ export default class Tile extends React.Component {
     }
 }
 
-const Number = ({ number }) => <div class="number">{number}</div>
-const Robber = ({ }) => <div class="robber"></div>
+const Number = ({ number }) => 
+    <div className={`number ${dots(number) === 5 ? 'red' : ''}`}>
+        {number}
+
+        <div className="dots">
+            {new Array(dots(number)).fill(<div className="dot"></div>)}
+        </div>
+    </div>
+
+const Robber = ({ }) => <div className="robber"></div>
+
+const dots = (number) => 6 - Math.abs(number - 7);
 
 function getRow(index) {
     if (index < 3) {

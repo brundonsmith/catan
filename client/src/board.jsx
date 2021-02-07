@@ -17,3 +17,10 @@ export default class Board extends React.Component {
         )
     }
 }
+
+  
+// {this.props.roadSlots?.map((road, index) => 
+//     <Road {...road} index={index} key={index} />)}
+    
+// {this.props.settlementSlots?.map((road, index) => 
+//     <Settlement {...road} index={index} key={index} />)}
