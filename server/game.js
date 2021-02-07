@@ -94,13 +94,13 @@ function generateBoardState() {
 
     while (tileTypesClone.length > 0) {
         const tileTypeIndex = Math.floor(Math.random() * tileTypesClone.length);
-        const type = tileTypesClone.splice(tileTypeIndex, 1);
+        const type = tileTypesClone.splice(tileTypeIndex, 1)[0];
 
         let number;
 
         if (type !== "desert") {
             const tileNumIndex = Math.floor(Math.random() * tileNumsClone.length);
-            number = tileNumsClone.splice(tileNumIndex, 1);
+            number = tileNumsClone.splice(tileNumIndex, 1)[0];
         } else {
             number = null;
             thiefTile = tiles.length;

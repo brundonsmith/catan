@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack ; cp ./src/index.html ./dist"
+    "build": "webpack ; cp ./src/index.html ./dist",
+    "watch": "webpack --watch"
   },
   "author": "",
   "license": "ISC",

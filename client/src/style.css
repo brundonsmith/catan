@@ -1,0 +1,145 @@
+
+body {
+    /* --tile-height: 300px;
+    --tile-width: calc(var(--tile-height) * 0.866); */
+    --tile-width: 15vw;
+    --tile-height: calc(var(--tile-width) * 1.155);
+    --tile-margin: 0px;
+}
+
+.board {
+    position: relative;
+}
+
+.tile {
+    position: absolute;
+    top: calc((var(--tile-height) + var(--tile-margin)) * 0.75 * var(--row));
+    left: calc((var(--tile-width) + var(--tile-margin)) * var(--col));
+
+    width: var(--tile-width);
+    height: var(--tile-height);
+    clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
+    
+    background-image: url("catan-tiles.jpg");
+    background-size: 316%;
+}
+
+.tile.sheep {
+    background-position: 99% 67%;
+}
+.tile.wood {
+    background-position: 99% 100%;
+}
+.tile.clay {
+    background-position: 51% 17%;
+}
+.tile.stone {
+    background-position: 2% 34%;
+}
+.tile.wheat {
+    background-position: 51% 67%;
+}
+.tile.desert {
+    background-position: 2% 0.5%;
+}
+
+/* first row */
+.tile:nth-child(1),
+.tile:nth-child(2),
+.tile:nth-child(3) {
+    --row: 0;
+}
+
+.tile:nth-child(1) {
+    --col: 1;
+}
+.tile:nth-child(2) {
+    --col: 2;
+}
+.tile:nth-child(3) {
+    --col: 3;
+}
+
+/* second row */
+.tile:nth-child(4),
+.tile:nth-child(5),
+.tile:nth-child(6),
+.tile:nth-child(7) {
+    --row: 1;
+}
+
+.tile:nth-child(4) {
+    --col: 0.5;
+}
+.tile:nth-child(5) {
+    --col: 1.5;
+}
+.tile:nth-child(6) {
+    --col: 2.5;
+}
+.tile:nth-child(7) {
+    --col: 3.5;
+}
+
+/* third (middle) row */
+.tile:nth-child(8),
+.tile:nth-child(9),
+.tile:nth-child(10),
+.tile:nth-child(11),
+.tile:nth-child(12) {
+    --row: 2;
+}
+
+.tile:nth-child(8) {
+    --col: 0;
+}
+.tile:nth-child(9) {
+    --col: 1;
+}
+.tile:nth-child(10) {
+    --col: 2;
+}
+.tile:nth-child(11) {
+    --col: 3;
+}
+.tile:nth-child(12) {
+    --col: 4;
+}
+
+/* fourth row */
+.tile:nth-child(13),
+.tile:nth-child(14),
+.tile:nth-child(15),
+.tile:nth-child(16) {
+    --row: 3;
+}
+
+.tile:nth-child(13) {
+    --col: 0.5;
+}
+.tile:nth-child(14) {
+    --col: 1.5;
+}
+.tile:nth-child(15) {
+    --col: 2.5;
+}
+.tile:nth-child(16) {
+    --col: 3.5;
+}
+
+/* fifth row */
+.tile:nth-child(17),
+.tile:nth-child(18),
+.tile:nth-child(19) {
+    --row: 4;
+}
+
+.tile:nth-child(17) {
+    --col: 1;
+}
+.tile:nth-child(18) {
+    --col: 2;
+}
+.tile:nth-child(19) {
+    --col: 3;
+}

@@ -2,6 +2,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
+import Board from "./board";
+
 class App extends React.Component {
 
     state = {
@@ -21,7 +23,8 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                <h1>Hello world!</h1>
+                <Board {...this.state.gameState}></Board>
+
                 <button onClick={() => call(`addPlayer`, { color: "red", name: "brandon" })}>
                     Add player
                 </button>
