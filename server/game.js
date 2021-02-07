@@ -51,7 +51,7 @@ function upgradeSettlement({ settlement }) {
 }
 
 function buildRoad({ road, player }) {
-    gameState.road[settlement] = {
+    gameState.roadSlots[settlement] = {
         owner: player,
         color: gameState.players[player].color,
     };
