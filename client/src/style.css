@@ -9,6 +9,8 @@ body {
 
 .board {
     position: relative;
+    width: calc((var(--tile-width) + var(--tile-margin)) * 5);
+    height: calc((var(--tile-height) + var(--tile-margin)) * 4);
 }
 
 .tile {
@@ -41,105 +43,4 @@ body {
 }
 .tile.desert {
     background-position: 2% 0.5%;
-}
-
-/* first row */
-.tile:nth-child(1),
-.tile:nth-child(2),
-.tile:nth-child(3) {
-    --row: 0;
-}
-
-.tile:nth-child(1) {
-    --col: 1;
-}
-.tile:nth-child(2) {
-    --col: 2;
-}
-.tile:nth-child(3) {
-    --col: 3;
-}
-
-/* second row */
-.tile:nth-child(4),
-.tile:nth-child(5),
-.tile:nth-child(6),
-.tile:nth-child(7) {
-    --row: 1;
-}
-
-.tile:nth-child(4) {
-    --col: 0.5;
-}
-.tile:nth-child(5) {
-    --col: 1.5;
-}
-.tile:nth-child(6) {
-    --col: 2.5;
-}
-.tile:nth-child(7) {
-    --col: 3.5;
-}
-
-/* third (middle) row */
-.tile:nth-child(8),
-.tile:nth-child(9),
-.tile:nth-child(10),
-.tile:nth-child(11),
-.tile:nth-child(12) {
-    --row: 2;
-}
-
-.tile:nth-child(8) {
-    --col: 0;
-}
-.tile:nth-child(9) {
-    --col: 1;
-}
-.tile:nth-child(10) {
-    --col: 2;
-}
-.tile:nth-child(11) {
-    --col: 3;
-}
-.tile:nth-child(12) {
-    --col: 4;
-}
-
-/* fourth row */
-.tile:nth-child(13),
-.tile:nth-child(14),
-.tile:nth-child(15),
-.tile:nth-child(16) {
-    --row: 3;
-}
-
-.tile:nth-child(13) {
-    --col: 0.5;
-}
-.tile:nth-child(14) {
-    --col: 1.5;
-}
-.tile:nth-child(15) {
-    --col: 2.5;
-}
-.tile:nth-child(16) {
-    --col: 3.5;
-}
-
-/* fifth row */
-.tile:nth-child(17),
-.tile:nth-child(18),
-.tile:nth-child(19) {
-    --row: 4;
-}
-
-.tile:nth-child(17) {
-    --col: 1;
-}
-.tile:nth-child(18) {
-    --col: 2;
-}
-.tile:nth-child(19) {
-    --col: 3;
 }
